@@ -1,0 +1,45 @@
+@use '@/assets/sass/settings/' as *;
+@use '@/assets/sass/tools/' as *;
+
+$icon--sm : to-rem(32);
+$icon--md : to-rem(40);
+$icon--lg : to-rem(48);
+$icon--xl : to-rem(64);
+$icon--2xl: to-rem(72);
+$icon--3xl: to-rem(80);
+
+
+.duocolor-icon {
+  &--32 {
+    width: $icon--sm;
+    height: $icon--sm;
+  }
+
+  &--40 {
+    width: $icon--md;
+    height: $icon--md;
+  }
+
+  &--48 {
+    width: $icon--lg;
+    height: $icon--lg;
+  }
+
+  &--64 {
+    width: $icon--xl;
+    height: $icon--xl;
+  }
+
+  &--72 {
+    width: $icon--2xl;
+    height: $icon--2xl;
+  }
+
+  &--80 {
+    width: $icon--3xl;
+    height: $icon--3xl;
+  }
+}
+
+
+
