@@ -15,3 +15,5 @@ This technique has a lot of benefits:
 - 💽 Caching purposes, if you load it once on the client you can cache it forever!
 - 💅🏻 Modifiable and flexibility, by using the `use` trick you can still change all icon colors.
 
+Read more into performance impact for React here:
+https://kurtextrem.de/posts/svg-in-js
