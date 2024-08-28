@@ -1,5 +1,6 @@
 const fs = require('fs');
 const uiIconsPublicFolder = './public/icons/ui';
+const spriteFolder = './public/icons';
 
 // Minified UI icons are going to be loaded and icon sprite will be generated as
 // a svg of multiple <symbol>'s so it can be used inline with a <use> tag.
@@ -32,4 +33,9 @@ const uiIconsSymbolData = uiIcons
   .join('\n');
 
 const content = `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">\n${uiIconsSymbolData}\n</svg>\n`;
-fs.writeFileSync('./public/icons/sprite.svg', content);
+
+if (!fs.existsSync(spriteFolder)) {
+  fs.mkdirSync(spriteFolder);
+}
+
+fs.writeFileSync(`${spriteFolder}/sprite.svg`, content);
