@@ -1,4 +1,5 @@
 const fs = require('fs');
+const typesFolder = "./src/types";
 const uiIconsFolder = 'src/assets/icons/ui';
 const duocolorIconsFolder = 'src/assets/icons/duocolor/40';
 
@@ -37,4 +38,9 @@ export type UiIconNames = (typeof uiIconNamesArray)[number];
 export const duoColorIconNamesArray=[${duocolorIconNames.join(', ')}] as const;
 export type DuocolorIconNames = (typeof duoColorIconNamesArray)[number];
 `;
-fs.writeFileSync('./src/types/icon-names.ts', content);
+
+if (!fs.existsSync(typesFolder)) {
+  fs.mkdirSync(typesFolder);
+}
+
+fs.writeFileSync(`${typesFolder}/icon-names.ts`, content);
