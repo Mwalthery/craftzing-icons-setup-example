@@ -17,3 +17,10 @@ This technique has a lot of benefits:
 
 Read more into performance impact for React here:
 https://kurtextrem.de/posts/svg-in-js
+
+## run local demo
+To run the local demo, you need to the following:
+
+1. run `npm run icons` to build icon sprite and all other icons
+2. run `npx http-server -o public` (or another simple plug and play node server library)
+3. open `http://127.0.0.1:8080/`
