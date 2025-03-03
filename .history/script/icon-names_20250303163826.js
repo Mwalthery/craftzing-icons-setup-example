@@ -3,7 +3,7 @@ const typesFolder = './src/types';
 const uiIconsFolder = 'src/assets/icons/ui';
 const duocolorIconsFolder = 'src/assets/icons/duocolor/40';
 const filterForSvgs = require('./filterForSvgs.js');
-const fileNameToString = require('./fileNameToString.js');
+import fileNameToString from './fileNameToString';
 
 // UI icons and DuoColor icons are going to be loaded and icon names will be generate as
 // a type, so we can get typehinting

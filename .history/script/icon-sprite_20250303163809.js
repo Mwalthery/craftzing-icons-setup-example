@@ -3,6 +3,8 @@ const uiIconsPublicFolder = './public/icons/ui';
 const spriteFolder = './public/icons';
 const filterForSvgs = require('./filterForSvgs.js');
 
+import { filterForSvgs } from './filterForSvgs';
+
 // Minified UI icons are going to be loaded and icon sprite will be generated as
 // a svg of multiple <symbol>'s so it can be used inline with a <use> tag.
 // Read more why we do this here: https://kurtextrem.de/posts/svg-in-js
