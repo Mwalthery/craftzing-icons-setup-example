@@ -13,13 +13,13 @@ const filterForSvgs = (file) => {
 const uiIcons = fs.readdirSync(uiIconsFolder).filter(filterForSvgs);
 const duocolorIcons = fs.readdirSync(duocolorIconsFolder).filter(filterForSvgs);
 
-const fileNameToString = (file) => {
+function fileNameToString(file) {
   return `'${file.replace('.svg', '')}'`;
-};
+}
 
-const removeQuotes = (string) => {
+function removeQuotes(string) {
   return string.replace(/['"]+/g, '');
-};
+}
 
 const uiIconNames = uiIcons.map(fileNameToString);
 const duocolorIconNames = duocolorIcons.map(fileNameToString);

@@ -1,25 +1,25 @@
 const fs = require('fs');
-const typesFolder = './src/types';
+const typesFolder = "./src/types";
 const uiIconsFolder = 'src/assets/icons/ui';
 const duocolorIconsFolder = 'src/assets/icons/duocolor/40';
 
 // UI icons and DuoColor icons are going to be loaded and icon names will be generate as
 // a type, so we can get typehinting
 
-const filterForSvgs = (file) => {
+function filterForSvgs(file) {
   return file.endsWith('.svg');
-};
+}
 
 const uiIcons = fs.readdirSync(uiIconsFolder).filter(filterForSvgs);
 const duocolorIcons = fs.readdirSync(duocolorIconsFolder).filter(filterForSvgs);
 
-const fileNameToString = (file) => {
+function fileNameToString(file) {
   return `'${file.replace('.svg', '')}'`;
-};
+}
 
-const removeQuotes = (string) => {
+function removeQuotes(string) {
   return string.replace(/['"]+/g, '');
-};
+}
 
 const uiIconNames = uiIcons.map(fileNameToString);
 const duocolorIconNames = duocolorIcons.map(fileNameToString);
@@ -32,9 +32,7 @@ console.log(uiIconValidations.join(', \n')); // Output: UI Icons for DatoCMS
 console.log('---------- DUOCOLOR ICONS --------');
 console.log(duocolorIconValidations.join(', \n')); // Output: Duocolor Icons for DatoCMS
 
-const content = `export const uiIconNamesArray=[${uiIconNames.join(
-  ', '
-)}] as const;
+const content = `export const uiIconNamesArray=[${uiIconNames.join(', ')}] as const;
 export type UiIconNames = (typeof uiIconNamesArray)[number];
 
 export const duoColorIconNamesArray=[${duocolorIconNames.join(', ')}] as const;

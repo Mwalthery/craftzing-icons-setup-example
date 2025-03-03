@@ -5,15 +5,15 @@ const typesFolder = './src/types/';
 // Flags are going to be loaded and iso codes will be generate as
 // a type, so we can get typehinting
 
-const filterForSvgs = (file) => {
+function filterForSvgs(file) {
   return file.endsWith('.svg');
-};
+}
 
 const flags = fs.readdirSync(flagsIconsFolder).filter(filterForSvgs);
 
-const fileNameToString = (file) => {
+function fileNameToString(file) {
   return `'${file.replace('.svg', '')}'`;
-};
+}
 
 const flagNames = flags.map(fileNameToString);
 
@@ -26,3 +26,4 @@ if (!fs.existsSync(typesFolder)) {
 }
 
 fs.writeFileSync(`${typesFolder}/iso-codes.ts`, content);
+

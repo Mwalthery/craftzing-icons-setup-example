@@ -6,15 +6,15 @@ const spriteFolder = './public/icons';
 // a svg of multiple <symbol>'s so it can be used inline with a <use> tag.
 // Read more why we do this here: https://kurtextrem.de/posts/svg-in-js
 
-const filterForSvgs = (file) => {
+function filterForSvgs(file) {
   return file.endsWith('.svg');
-};
+}
 
 const uiIcons = fs.readdirSync(uiIconsPublicFolder).filter(filterForSvgs);
 
-const fileNameToId = (file) => {
+function fileNameToId(file) {
   return file.replace('.svg', '');
-};
+}
 
 const uiIconsSymbolData = uiIcons
   .map((fileName) => {
