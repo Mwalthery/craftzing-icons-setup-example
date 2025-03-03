@@ -2,12 +2,15 @@ const fs = require('fs');
 const flagsIconsFolder = 'src/assets/flags';
 const typesFolder = './src/types/';
 import { filterForSvgs } from './filterForSvgs';
-import { fileNameToString } from './fileNameToString';
 
 // Flags are going to be loaded and iso codes will be generate as
 // a type, so we can get typehinting
 
 const flags = fs.readdirSync(flagsIconsFolder).filter(filterForSvgs);
+
+const fileNameToString = (file) => {
+  return `'${file.replace('.svg', '')}'`;
+};
 
 const flagNames = flags.map(fileNameToString);
 

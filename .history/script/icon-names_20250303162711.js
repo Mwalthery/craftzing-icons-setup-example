@@ -3,13 +3,16 @@ const typesFolder = './src/types';
 const uiIconsFolder = 'src/assets/icons/ui';
 const duocolorIconsFolder = 'src/assets/icons/duocolor/40';
 import { filterForSvgs } from './filterForSvgs';
-import { fileNameToString } from './fileNameToString';
 
 // UI icons and DuoColor icons are going to be loaded and icon names will be generate as
 // a type, so we can get typehinting
 
 const uiIcons = fs.readdirSync(uiIconsFolder).filter(filterForSvgs);
 const duocolorIcons = fs.readdirSync(duocolorIconsFolder).filter(filterForSvgs);
+
+const fileNameToString = (file) => {
+  return `'${file.replace('.svg', '')}'`;
+};
 
 const removeQuotes = (string) => {
   return string.replace(/['"]+/g, '');

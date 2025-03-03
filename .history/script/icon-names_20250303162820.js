@@ -11,6 +11,10 @@ import { fileNameToString } from './fileNameToString';
 const uiIcons = fs.readdirSync(uiIconsFolder).filter(filterForSvgs);
 const duocolorIcons = fs.readdirSync(duocolorIconsFolder).filter(filterForSvgs);
 
+const fileNameToString = (file) => {
+  return `'${file.replace('.svg', '')}'`;
+};
+
 const removeQuotes = (string) => {
   return string.replace(/['"]+/g, '');
 };
